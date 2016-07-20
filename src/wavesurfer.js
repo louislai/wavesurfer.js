@@ -224,11 +224,22 @@ var WaveSurfer = {
     },
 
     /**
+     * Set AudioBuffer directly
+     */
+
+    setAudioBuffer: function (buffer) {
+        this.empty();
+
+        this.loadDecodedBuffer(buffer);
+    },
+
+    /**
      * Toggle the volume on and off. It not currenly muted it will
      * save the current volume value and turn the volume off.
      * If currently muted then it will restore the volume to the saved
      * value, and then rest the saved value.
      */
+
     toggleMute: function () {
         if (this.isMuted) {
             // If currently muted then restore to the saved volume
